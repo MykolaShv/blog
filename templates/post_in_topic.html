@@ -1,0 +1,20 @@
+
+{% extends 'base.html' %}
+{% block content%}
+<h1> {{topic}}</h1>
+
+{% for one_blog in all_blogposts %}
+
+            <div>
+                <p> <b> {{one_blog.title }} </b>
+                <a href="{% url 'get_blog' one_blog.slug %}"> READ.  </a>
+                  Автор: {{one_blog.author.name}}
+                </p>
+                <p> {{one_blog.text|truncatechars:120}}
+                </p>
+            </div>
+
+{% endfor %}
+
+
+{% endblock %}

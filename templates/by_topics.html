@@ -1,0 +1,12 @@
+
+{% extends 'base.html' %}
+{% block content%}
+<h1> Please choose the topic</h1>
+{% for topic in all_topics %}
+    {% csrf_token  %}
+   <p> <button style="width: 250px; background-color: #99ccff; color: brown;
+                border-radius: 20px 5px;" type='submit'>
+                <a href="{% url 'get_topic' topic.slug %}">
+                <b> {{topic}} </b> </a> </button></p>
+{% endfor %}
+{% endblock %}

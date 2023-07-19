@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>title</title>
+    <style>
+        #navbar {
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+            }
+        #navbar li { display: inline; }
+        #navbar {
+              margin: 0;
+              padding: 0;
+              list-style-type: none;
+              border: 2px solid #0066FF;
+              border-radius: 20px 5px;
+              width: 1150px;
+              text-align: center;
+              background-color: #33ADFF;
+        }
+        #navbar a {
+              color: #fff;
+              padding: 5px 10px;
+              text-decoration: none;
+              font-weight: bold;
+              display: inline-block;
+              width: 120px;
+        }
+
+         #navbar form {
+              color: #fff;
+              padding: 5px 10px;
+              text-decoration: none;
+              font-weight: bold;
+              display: inline-block;
+              width: 160px;
+        }
+        #navbar a:hover {
+              border-radius: 20px 5px;
+              background-color: #0066FF;
+        }
+
+
+    </style>
+</head>
+<body>
+    <header>
+        <div style="background-color: #0080ff">
+
+            <ul id="navbar">
+                <li><a href="{% url 'blogs' %}"  >Main page</a></li>
+                <li><a href="{% url 'create' %}" >Create blog</a></li>
+                <li><a href="{% url 'topic_create' %}" >Create topic</a></li>
+                <li><a href="{% url 'by_topics' %}" >By topics</a></li>
+                <form style="width: 250px;">
+                    <input type="text" name="search">
+                    <button type="submit">Search</button>
+                </form>
+                <li><a href = "{% url 'user_login' %}" >Login/out</a></li>
+            </ul>
+        </div>
+    </header>
+
+        <div style="background-color:  #b3ffd9">
+        <div class="container">
+
+            {% block content%}{% endblock %}
+
+        </div>
+            </div>
+
+
+</body>
+</html>
